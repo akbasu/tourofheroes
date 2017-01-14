@@ -16,4 +16,5 @@ import { AppComponent }  from './app.component';
                                       it places the HTML rendering of AppComponent in the DOM, inside the <my-app>
                                        element tags of the index.html */
 })
+
 export class AppModule { }
