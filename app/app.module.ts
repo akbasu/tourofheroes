@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import { AppComponent }  from './app.component';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroesComponent} from './heroes.component';
+import {DashboardComponent} from './dashboard.component'
 import {HeroService} from './hero.service';
 
 @NgModule({
@@ -14,14 +15,24 @@ import {HeroService} from './hero.service';
       FormsModule,
       RouterModule.forRoot([
       {
+        path: '', redirectTo: '/dashboard', pathMatch: 'full'
+      },  
+      {
         path:'heroes', component: HeroesComponent
+      },
+      {
+        path: 'dashboard', component: DashboardComponent
+      },
+      {
+        path: 'hero/:id', component: HeroDetailComponent
       }
     ]) 
   ],
   declarations: [ //identifies the application's component. the top of this app's rather bare component tree.
       AppComponent,
       HeroDetailComponent,
-      HeroesComponent
+      HeroesComponent,
+      DashboardComponent
     ],
   providers: [
     HeroService
